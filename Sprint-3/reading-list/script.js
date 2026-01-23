@@ -21,3 +21,22 @@ const books = [
   },
 ];
 
+function createAndRenderBookListItem(book) {
+  let listItem = document.createElement("li")
+  const title = document.createElement("h3")
+  title.classList.add(`title`)
+  title.textContent = book.title
+  listItem.append(title)
+  return listItem
+
+}
+
+function readingList(arrayOfBooksObjects) {
+  const unorderedList = document.getElementById("reading-list") 
+  for (book of arrayOfBooksObjects) {
+    const listItem = createAndRenderBookListItem(book)
+    unorderedList.appendChild(listItem)
+  }
+}
+// readingList(books)
+readingList(books)
